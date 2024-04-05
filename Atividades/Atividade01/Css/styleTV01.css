@@ -1,0 +1,82 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.containere {
+  display: flex;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+}
+
+#sidebar {
+  width: 0;
+  height: 100vh;
+  background-color: #555;
+  transition: width 0.3s, opacity 0.3s, transform 0.3s; /* Adicionando a animação de transição */
+  overflow: hidden;
+  opacity: 0; /* Inicialmente invisível */
+  transform: translateX(-100%); /* Movido para fora da tela */
+}
+
+#sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+#sidebar li {
+  padding: 10px;
+}
+
+#sidebar a {
+  color: white;
+  text-decoration: none;
+}
+
+main {
+  flex: 1;
+  padding: 20px;
+}
+
+button#menu-toggle {
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+/* Adicionando estilo ao botão de menu */
+button#menu-toggle img {
+  width: 30px; /* Ajuste o tamanho conforme necessário */
+  height: auto; /* Mantém a proporção da imagem */
+}
+/* Seus estilos CSS existentes aqui */
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+/* Seus estilos CSS existentes aqui */
+
+.container {
+  display: flex;
+  flex-direction: column; /* Alinha os elementos em uma única coluna */
+  min-height: 100vh; /* Altura mínima da viewport */
+}
+
+main {
+  flex-grow: 1; /* Faz com que o conteúdo principal ocupe o espaço restante */
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
