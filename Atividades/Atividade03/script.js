@@ -1,3 +1,17 @@
+// Função para retornar data e hora em tempo real
+function getCurrentDateTime() {
+    const now = new Date();
+    const day = String(now.getDate()).padStart(2, '0');
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const year = now.getFullYear();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+
+    return `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
+}
+
+
 // Função para validar CPF
 function validateCPF() {
     const cpfInput = document.getElementById('cpf');
@@ -133,3 +147,17 @@ function calculateCommission() {
     const commission = saleValue * (commissionRate / 100);
     alert('A comissão é: R$ ' + commission.toFixed(2));
 }
+
+// Função para atualizar a data e hora em tempo real
+function updateDateTime() {
+    const datetimeDiv = document.getElementById('datetime');
+    datetimeDiv.textContent =  getCurrentDateTime();
+}
+
+// Chamar a função updateDateTime() quando a janela for carregada
+window.onload = function() {
+    updateDateTime();
+};
+
+// Chamar a função de atualização a cada segundo
+setInterval(updateDateTime, 1000);
